@@ -3,3 +3,5 @@ main:
     url: /about/
   - title: "HTB"
     url: /htb/
+  - title: "Blog"
+    url: /blog/
