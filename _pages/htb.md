@@ -1,6 +1,6 @@
 ---
 permalink: /htb/
-title: "htb"
+title: "HTB"
 taxonomy: category
 layout: category
 category: htb
