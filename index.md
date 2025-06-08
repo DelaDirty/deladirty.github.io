@@ -5,7 +5,7 @@ permalink: /
 hidden: true
 header:
   overlay_color: "#a28089"
-  overlay_filter: "0.0"
+  overlay_filter: "0.8"
 feature_row:
   - image_path: /assets/images/shellcode.png
     alt: "Shellcode-Encryption"
