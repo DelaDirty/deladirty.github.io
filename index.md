@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "DelaDirty’s Pentest Playbook"
+title: "My Featured Posts"
 permalink: /          
 hidden: true
 header:
@@ -15,8 +15,22 @@ feature_row:
     btn_label: "Read Post"
     btn_class: "btn--primary"
 ---
-## Featured Work
+
 {% include feature_row type="left" %}
+
+
+
+
+{% for post in site.posts limit:3 %}
+### [{{ post.title }}]({{ post.url | relative_url }})
+
+<small>{{ post.date | date: "%-d %b %Y" }}</small>
+
+{{ post.excerpt | strip_html | truncatewords: 40 }}
+
+[Read More →]({{ post.url | relative_url }})
+
+{% endfor %}
 
 
 
