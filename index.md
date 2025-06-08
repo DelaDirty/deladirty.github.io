@@ -18,6 +18,5 @@ feature_row:
 ## Featured Work
 {% include feature_row %}
 
-## Recent Posts
-{% include site.posts limit="3" %}
+
 
