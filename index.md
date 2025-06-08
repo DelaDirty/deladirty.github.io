@@ -5,5 +5,3 @@
 layout: home
 author_profile: true
 ---
-
-{% include feature_row id="highlights" type="center" %}
