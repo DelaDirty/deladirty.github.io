@@ -5,5 +5,5 @@
 layout: home
 author_profile: true
 ---
-## Featured Work
+
 {% include feature_row id="highlights" type="center" %}
