@@ -18,5 +18,3 @@ feature_row:
 
 {% include feature_row %}
 
-## Latest Posts
-{% include posts_list limit="5" %}
