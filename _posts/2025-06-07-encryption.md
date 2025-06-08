@@ -22,7 +22,7 @@ Every time you run the Python script, it re-encrypts your shellcode and returns 
 ## How does it work?
 <small>Both AES256 and XOR Python scripts work the same way. The AES-256 will generate a randomized AES key and IV and output your encrypted shellcode. The XOR will generate a randomized XOR key for your encrypted shellcode.</small>
 
-<small>For usage tips check out my github readme files for both.</small> \
+<small>For usage tips check out my github readme files for both.</small> 
 
 
 <a class="btn btn--primary" href="https://github.com/DelaDirty/Shellcode-Encryption" target="_blank" rel="noopener">View on GitHub</a>

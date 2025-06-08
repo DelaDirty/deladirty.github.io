@@ -1,10 +1,10 @@
 ---
 layout: splash
-title: "My Featured Posts"
+title: "Featured Posts"
 permalink: /          
 hidden: true
 header:
-  overlay_color: "#000"
+  overlay_color: "#a28089"
   overlay_filter: "0.4"
 feature_row:
   - image_path: /assets/images/shellcode.png
@@ -20,7 +20,7 @@ feature_row:
 
 
 
-
+### Recent Posts
 {% for post in site.posts limit:3 %}
 ### [{{ post.title }}]({{ post.url | relative_url }})
 
