@@ -18,8 +18,7 @@ feature_row:
 ## Featured Work
 {% include feature_row type="left" %}
 
-## Recent Posts
-{% include post-list.html limit="3" type="center" %}
+
 
 
 
