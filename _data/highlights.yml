@@ -1,6 +1,0 @@
-- title: "Shellcode-Encryption"
-  excerpt: "Encrypt C# shellcode with AES-256 or XOR for quieter AV."
-  url: "https://github.com/DelaDirty/Shellcode-Encryption"
-  image_path: 
-  btn_label: "GitHub"
-  btn_class: "btn--primary"
