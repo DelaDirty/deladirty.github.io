@@ -22,6 +22,7 @@ github_username: username
 minimal_mistakes_skin: neon
 search: true
 excerpt_separator: "<!--more-->"
+show_excerpts: true
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
