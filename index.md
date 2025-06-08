@@ -16,9 +16,10 @@ feature_row:
     btn_class: "btn--primary"
 ---
 ## Featured Work
-{% include feature_row %}
+{% include feature_row type="left" %}
 
-{% include post-list.html limit="3" %}
+## Recent Posts
+{% include post-list.html limit="3" type="center" %}
 
 
 
