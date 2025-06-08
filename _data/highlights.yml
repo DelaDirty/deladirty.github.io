@@ -1,6 +1,0 @@
-- title: "Shellcode-Encryption - OSEP"
-  excerpt: "Encrypts C# shellcode with AES-256 or XOR to slip past static AV."
-  url: "https://github.com/DelaDirty/Shellcode-Encryption"
-  image_path: /assets/images/shellcode.png
-  btn_label: "View on GitHub"
-  btn_class: "btn--primary"
