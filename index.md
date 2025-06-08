@@ -18,5 +18,7 @@ feature_row:
 ## Featured Work
 {% include feature_row %}
 
+{% include post-list.html limit="3" %}
+
 
 
