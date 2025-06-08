@@ -1,11 +1,11 @@
 ---
 layout: splash
-title: "Featured Posts"
+title: ""
 permalink: /          
 hidden: true
 header:
   overlay_color: "#a28089"
-  overlay_filter: "0.4"
+  overlay_filter: "0.0"
 feature_row:
   - image_path: /assets/images/shellcode.png
     alt: "Shellcode-Encryption"
@@ -15,7 +15,7 @@ feature_row:
     btn_label: "Read Post"
     btn_class: "btn--primary"
 ---
-
+### Featured Posts
 {% include feature_row type="left" %}
 
 
