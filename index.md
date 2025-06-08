@@ -1,7 +1,9 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 author_profile: true
+entries_layout: list     # ← forces the tall “blog roll” style
+show_excerpts: true      # ← display auto-generated or custom excerpts
 ---
+
+## Featured Work
+{% include feature_row id="highlights" type="center" %}
