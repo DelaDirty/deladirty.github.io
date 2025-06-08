@@ -1,7 +1,7 @@
 ---
 layout: splash
 title: "DelaDirty’s Pentest Playbook"
-permalink: /          # owns the root URL
+permalink: /          
 hidden: true
 header:
   overlay_color: "#000"
@@ -17,4 +17,7 @@ feature_row:
 ---
 ## Featured Work
 {% include feature_row %}
+
+## Recent Posts
+{% include site.posts limit="3" %}
 
