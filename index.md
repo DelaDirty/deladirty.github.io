@@ -11,10 +11,10 @@ feature_row:
     alt: "Shellcode-Encryption"
     title: "Shellcode-Encryption"
     excerpt: "Encrypt C# shellcode with AES-256 or XOR to evade static AV."
-    url: "https://github.com/DelaDirty/Shellcode-Encryption"
-    btn_label: "GitHub"
+    url: "_posts/2025-06-07-encryption.md"
+    btn_label: "Read Post"
     btn_class: "btn--primary"
 ---
-
+## Featured Work
 {% include feature_row %}
 
