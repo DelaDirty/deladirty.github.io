@@ -11,7 +11,7 @@ feature_row:
     alt: "Shellcode-Encryption"
     title: "Shellcode-Encryption"
     excerpt: "Encrypt C# shellcode with AES-256 or XOR to evade static AV."
-    url: "_posts/2025-06-07-encryption.md"
+    url: "https://deladirty.github.io/blog/encryption/"
     btn_label: "Read Post"
     btn_class: "btn--primary"
 ---
