@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-layout: posts       
 permalink: /blog/
-author_profile: true 
+layout: category
+taxonomy: blog       # ← tells the template which category to filter on
 ---
