@@ -8,6 +8,7 @@ tags:
   - tooling
   - av-evasion
 layout: single
+excerpt: "Python scripts that will auto-generate keys and encrypt your shellcode into a C# byte array for the OSEP exam..."
 ---
 
 
