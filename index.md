@@ -18,7 +18,7 @@ feature_row:
     alt: "OSCP Journey"
     title: "My OSCP journey"
     excerpt: "Lessons, failures, and practical tips from one year with the OSCP."
-    url: "https://deladirty.github.io/blog/encryption/"
+    url: "https://deladirty.github.io/blog/oscp/"
     btn_label: "Read Post"
     btn_class: "btn--primary"
 ---
