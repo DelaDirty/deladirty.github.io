@@ -2,8 +2,7 @@
 title: HTB
 permalink: /htb/
 layout: category
-taxonomy: category
-term: htb          
+taxonomy: htb          
 ---
 
 
