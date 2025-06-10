@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "DelaDirty"
   avatar : "/assets/images/shellcode.png"
-  bio    : "I currently work on a DFIR team, but I am transitioning towards pentesting and red teaming. This is what got me hooked on cyber as a career. I wanted to share my thought process and experiences, hoping it helps others on their journey."
+  bio    : "I currently work on a DFIR team, but I am transitioning towards pentesting and red teaming. I love to build PCs, hack, and play guitar."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
