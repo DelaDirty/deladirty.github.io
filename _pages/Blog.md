@@ -1,6 +1,6 @@
 ---
 title: "Blog"
 permalink: /blog/
-layout: home
+layout: category
 taxonomy: blog      
 ---
