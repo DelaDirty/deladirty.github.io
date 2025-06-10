@@ -1,5 +1,5 @@
 ---
-title: "Shellcode-Encryption – AES-256/XOR Wrapper for C# Payloads"
+title: "Shellcode-Encryption – for C# Paylods (OSEP)"
 date: 2025-06-07                   
 categories:
   - blog                          
@@ -8,7 +8,9 @@ tags:
   - tooling
   - av-evasion
 layout: single
-excerpt: "Python scripts that will auto-generate keys and encrypt your shellcode into a C# byte array for the OSEP exam..."
+excerpt: "Python scripts that will auto-generate keys and encrypt your shellcode for the OSEP exam."
+header:
+  teaser: /assets/images/shellcode.png
 ---
 
 
