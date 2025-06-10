@@ -17,7 +17,7 @@ feature_row:
   - image_path: /assets/images/oscp.png
     alt: "OSCP Journey"
     title: "My OSCP journey"
-    excerpt: "Lessons, failures, and practical tips from one year with the OSCP."
+    excerpt: "Lessons, failures, and practical tips for the OSCP."
     url: "https://deladirty.github.io/blog/oscp/"
     btn_label: "Read Post"
     btn_class: "btn--primary"
