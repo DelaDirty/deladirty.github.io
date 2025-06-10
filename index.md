@@ -8,8 +8,8 @@ header:
   overlay_filter: "0.6"
 feature_row:
   - image_path: /assets/images/shellcode.png
-    alt: "Shellcode-Encryption"
-    title: "Shellcode-Encryption"
+    alt: "Shellcode-Encryption For OSEP"
+    title: "Shellcode-Encryption For OSEP"
     excerpt: "Encrypt C# shellcode with AES-256 or XOR to evade static AV."
     url: "https://deladirty.github.io/blog/encryption/"
     btn_label: "Read Post"
