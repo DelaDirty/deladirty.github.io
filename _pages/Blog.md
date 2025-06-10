@@ -2,5 +2,6 @@
 title: "Blog"
 permalink: /blog/
 layout: category
-taxonomy: blog      
+taxonomy: blog   
+entries_layout: grid   
 ---
