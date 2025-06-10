@@ -3,7 +3,8 @@ title: HTB
 permalink: /htb/
 layout: category
 taxonomy: htb
-entries_layout: grid          
+entries_layout: grid    
+classes: wide      
 ---
 
 
