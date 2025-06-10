@@ -4,7 +4,21 @@ permalink: /htb/
 layout: category
 taxonomy: htb          
 ---
+<div class="feature__wrapper">
+  {% for post in site.posts %}
+  <div class="feature__item">
+    <div class="archive__item-teaser">
+      <img src="{{ post.header.image | default: '/assets/images/default.jpg' }}" alt="{{ post.title }}">
+    </div>
+    <div class="archive__item-body">
+      <h2 class="archive__item-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="archive__item-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      <a href="{{ post.url | relative_url }}" class="btn btn--primary">Read More</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
-
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+I hope these walkthroughs help you out on your journey. 
