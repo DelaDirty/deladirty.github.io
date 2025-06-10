@@ -14,7 +14,6 @@ feature_row:
     url: "https://deladirty.github.io/blog/encryption/"
     btn_label: "Read Post"
     btn_class: "btn--primary"
-feature_row2:
   - image_path: /assets/images/oscp.png
     alt: "OSCP Journey"
     title: "My OSCP journey"
@@ -24,8 +23,8 @@ feature_row2:
     btn_class: "btn--primary"
 ---
 ### Featured Posts
-{% include feature_row type="left" %}
-{% include feature_row2 type="center" %}
+{% include feature_row %}
+
 
 
 
