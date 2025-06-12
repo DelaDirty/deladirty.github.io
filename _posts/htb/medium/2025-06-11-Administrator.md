@@ -63,7 +63,8 @@ subl /etc/hosts
 
  Once we add that, save the file, and we can kick off our scan.
 
-**Why are we doing this?**
+**Why are we doing this?**  
+
 This speeds up the process a bit because I have completed numerous boxes on Hack The Box and have noticed a pattern on their AD machines. Typically, these are `<boxname>.htb` and `dc01.<boxname>.htb`. If we didn't do this now, we would need to add these after our scan.  
 
 We are now initiating a full TCP port scan using aggressive timing to identify open services quickly. Since we have added the IP address with the domain name to our /etc/hosts file, we can use the box name instead of just the IP.
@@ -133,6 +134,7 @@ The nmap scan also shows that the domain name is Administrator.htb, which is why
 ## User Credentials with FTP and SMB
 
 We were given the credentials of Olivia:ichliebedich, and I wanted to do my due diligence by going through each port to see if we have any easy wins.  
+
 I looked into ftp and saw that Olivia cannot log in.
 
 ```bash
