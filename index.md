@@ -5,7 +5,7 @@ permalink: /
 hidden: true
 header:
   overlay_color: "#10ece9"
-  overlay_filter: "0.10"
+  overlay_filter: "0.05"
 feature_row:
   - image_path: /assets/images/shellcode.png
     alt: "Shellcode-Encryption For OSEP"
