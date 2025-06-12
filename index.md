@@ -4,7 +4,7 @@ title: ""
 permalink: /          
 hidden: true
 header:
-  overlay_color: "rgba(112, 171, 171, 0)"
+  overlay_color: "rgba(112, 171, 171, 0.32)"
   overlay_filter: 0.10
 feature_row:
   - image_path: /assets/images/shellcode.png
