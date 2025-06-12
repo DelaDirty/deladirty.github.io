@@ -1,6 +1,6 @@
 ---
 title: "Administrator"
-date: 2025-06-10
+date: 2025-06-11
 excerpt: A full walkthrough of HTB’s Administrator box covering AD enumeration, DACL abuse, and domain compromise.
 categories:
   - htb 
@@ -150,7 +150,7 @@ ftp <ip>
 
 Next, I tried smb with the credentials that we were given from the very beginning.  
 
-**Note:** I am using netexec on this box, but I also tend to use smbclient or smbmap to double-check my work. For the sake of this box, I am sticking to netexec.  
+> **Note:** I am using netexec on this box, but I also tend to use smbclient or smbmap to double-check my work. For the sake of this box, I am sticking to netexec.  
 
 ```bash
 
