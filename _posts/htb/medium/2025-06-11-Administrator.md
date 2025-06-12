@@ -1,5 +1,5 @@
 ---
-title: "Administrator | HackTheBox Walkthrough"
+title: "Administrator"
 date: 2025-06-10
 excerpt: A full walkthrough of HTB’s Administrator box covering AD enumeration, DACL abuse, and domain compromise.
 categories:
