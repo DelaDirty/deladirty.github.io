@@ -300,9 +300,10 @@ For sanity's sake, I double-checked Bloodhound and found that every user on the 
 
 Now that we have our list, we will run NetExec and spray credentials to see who can log in with WinRM, since port 5985 is open.
 
-```bash
+{% highlight bash %}
 netexec winrm administrator.htb -u user.txt -p pass.txt --continue-on-success | grep '[+]'
-```
+{% endhighlight %}
+
 I use `grep '[+]'` so that I don't have to see all the failed login attempts with netexec.  
 
 What we are left with are two users, Olivia and Emily, who can connect to the system. 
