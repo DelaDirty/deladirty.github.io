@@ -24,6 +24,7 @@ search: true
 
 
 # Build settings
+enable_copy_code_button: true
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
