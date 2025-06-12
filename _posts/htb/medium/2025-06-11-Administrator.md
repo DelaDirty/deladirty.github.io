@@ -205,7 +205,8 @@ bloodyAD -u olivia -p ichliebedich -d administrator.htb --dc-ip 10.129.129.13  s
 **Key Flags:**
 - `-u` and `-p` are for the credentials we have ( or, in our case, were given)
 - `-d` domain name in this case administrator.htb
-- `--dc-ip` IP of the target box.
+- `--dc-ip` IP of the target box.  
+
 [BloodyAD Wiki](https://github.com/CravateRouge/bloodyAD/wiki/User-Guide)  
 
 According to the BloodyAD documentation, we would use the set password command with two positional arguments: the user and the new password we are creating. I chose to have Michael's new password as `Password123!`
@@ -218,7 +219,7 @@ Using the same tactic as before, we see that Michael can force change Ben's pass
 
 ![](/assets/images/htb/administrator/13miketoben.png)
 
-Now, if we click on Ben's name, we can see that in `memberof`, he is listed as a share moderator. 
+Now, if we click on Ben's name, we can see that in `member of`, he is listed as a share moderator. 
 
 ![](/assets/images/htb/administrator/14benshare.png)
 
@@ -260,7 +261,7 @@ mget Backup.psafe3
 
 ## Password Cracking Psafe files
 
-Googling for 'psafe3', we find out that we need Password Safe installed in order to open the file. According to the GitHub page's Linux README.md file, we can install through apt.
+Googling for `psafe3`, we find out that we need Password Safe installed in order to open the file. According to the GitHub page's Linux README.md file, we can install through apt.
 
 ```bash
 sudo apt install passwordsafe
@@ -284,11 +285,12 @@ Now, we will connect to the database and use it as the master password and login
 
 We now have three additional users `Alexander Smith`, `Emily Rodriguez`, and `Emma Johnson`. When you click on a user, their password is automatically copied. At this point, I will create a password file and add all the new passwords, as well as a user file containing the current users.  
 
-![](/assets/images/htb/administrator/18userpass.png)
-
 This will make it easier for us to use tools such as NetExec to identify who has access to what.  
 
 For sanity's sake, I double-checked Bloodhound and found that every user on the network uses only their first name, making our user list more straightforward to manage.
+
+![](/assets/images/htb/administrator/18userpass.png)
+
 
 ---
 
@@ -299,13 +301,13 @@ Now that we have our list, we will run NetExec and spray credentials to see who 
 ```bash
 netexec winrm administrator.htb -u user.txt -p pass.txt --continue-on-success | grep '[+]'
 ```
-I grep `[+]` so that I don't have to see all the failed login attempts with netexec.  
+I use `grep '[+]'` so that I don't have to see all the failed login attempts with netexec.  
 
 What we are left with are two users, Olivia and Emily, who can connect to the system. 
 
 ![](/assets/images/htb/administrator/19netexecfoothold.png)
 
-Following Emily, we find the user flag.txt file on her desktop.
+Following Emily, we find the user.txt file on her desktop.
 
 ![](/assets/images/htb/administrator/20winrm.png)
 
@@ -345,7 +347,7 @@ python3 targetedKerberoast.py --dc-ip 10.129.129.13 -d administrator.htb -u emil
 Let's place the hash into its own file and use hashcat to crack it!
 
 ```bash
-hashcat ethan.hash /opt/seclists/Passwords/Leaked-Databases/rockyou.txt -o ethan.pass
+hashcat -m 5200 ethan.hash /opt/seclists/Passwords/Leaked-Databases/rockyou.txt -o ethan.pass
 ```
 
 We were able to crack the hash and found that Ethan's password is `limpbizkit`
