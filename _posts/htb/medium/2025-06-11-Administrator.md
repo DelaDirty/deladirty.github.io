@@ -34,9 +34,9 @@ toc: true
 
 # Overview
 
-Administrator is a medium-rated Windows box on Hack The Box that focuses on Active Directory misconfigurations — specifically DACL abuse that can lead to full domain compromise. This one stood out to me because of how common AD is in real-world environments and how easily things can spiral when permissions aren't set correctly.
+Administrator is a medium-rated Windows box on Hack The Box that focuses on Active Directory misconfigurations, specifically DACL abuse that can lead to full domain compromise. This one stood out to me because of how common AD is in real-world environments and how easily things can spiral when permissions aren't set correctly.
 
-We’re given initial creds right away, which simulates a real scenario where you might start an internal test or land access through phishing or password reuse.
+We’re given initial creds right away, which simulates a real scenario where you might start an internal test or land access through phishing.
 
 > **Username:** `Olivia`  
 > **Password:** `ichliebedich`
