@@ -21,6 +21,13 @@ feature_row:
     url: "https://deladirty.github.io/blog/oscp/"
     btn_label: "Read Post"
     btn_class: "btn--primary"
+  - image_path: /assets/images/htb/administrator/admin.jpg
+    alt: "Administrator"
+    title: "Administrator"
+    excerpt: "A full walkthrough of HTB’s Administrator box covering AD enumeration, DACL abuse, and domain compromise."
+    url: "https://deladirty.github.io/htb/Administrator/"
+    btn_label: "Read Post"
+    btn_class: "btn--primary"
 ---
 ### Featured Posts
 {% include feature_row %}
