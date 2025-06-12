@@ -19,7 +19,7 @@ tags:
   - bloodyad
   - netexec            
 header:
-  teaser: /assets/images/htb/administrator/admin.png
+  teaser: /assets/images/htb/administrator/admin.jpg
 toc: true
 ---
 
