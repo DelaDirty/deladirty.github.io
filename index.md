@@ -35,6 +35,13 @@ feature_row:
     url: "https://deladirty.github.io/htb/monteverde/"
     btn_label: "Read Post"
     btn_class: "btn--primary"
+  - image_path: /assets/images/htb/forest/forest.png
+    alt: "Forest"
+    title: "Forest"
+    excerpt: "A complete walkthrough of HTB’s Forest box covering AD enumeration, DACL abuse, and domain compromise."
+    url: "https://deladirty.github.io/htb/Forest/"
+    btn_label: "Read Post"
+    btn_class: "btn--primary"
 ---
 ### Featured Posts
 {% include feature_row %}
