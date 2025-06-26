@@ -154,7 +154,11 @@ Now that we have this password list, we will rerun netexec with the new `pass` l
 ```bash
 netexec smb 10.129.228.111 -u users -p pass --continue-on-success 
 ```
-We found a user and their password. We are finally moving a bit forward, but before we do, for those of you who may not know, `--continue-on-success` allows netexec to keep pushing through the list after it has found valid credentials. Usually, it would stop at 1 valid credential, but what could happen is that we have multiple ones, and we wouldn't know. I generally keep `--continue-on-success` for that reason.
+We found a user and their password. We are finally moving a bit forward, but before we do, for those of you who may not know, `--continue-on-success` allows netexec to keep pushing through the list after it has found valid credentials. 
+ 
+ Usually, it would stop at 1 valid credential, but what could happen is that we have multiple ones, and we wouldn't know. 
+ 
+  I generally keep `--continue-on-success` for that reason.
 
 ![](/assets/images/htb/monteverde/7.png)
 
@@ -165,9 +169,13 @@ Now that we know the SABatchJobs password, I will create a new list called `vali
 
 ## SMB With Credentials
 
-There are several ways we can approach this. An Easy way is to use netexec so we get an idea of what shares are available, then use smbclient to connect if we have read permissions on a share.  
+There are several ways we can approach this. 
 
-Another way is to use smbclient or smbmap to view the available shares and proceed from there. I like using netexec for initial enumeration of shares and then fully connecting with smbclient. However, to change a few things, I am going to run smbmap and then connect with smbclient.
+ An Easy way is to use netexec so we get an idea of what shares are available, then use smbclient to connect if we have read permissions on a share.  
+
+Another way is to use smbclient or smbmap to view the available shares and proceed from there. 
+
+ I like using netexec for initial enumeration of shares and then fully connecting with smbclient. However, to change a few things, I am going to run smbmap and then connect with smbclient.
 
 ```bash
 smbmap -H 10.129.228.111 -u SaBatchJobs -p <password> 
@@ -209,6 +217,7 @@ We will now add that to our validpass list and move forward.
 ## FootHold
 
 We will go back to using netexec and see if we can use the two passwords we have received.  
+
 Looking back at our Nmap scan, we see that port 5985 (WinRM) is open. This is most likely the way in.
 
 ```bash
@@ -250,7 +259,7 @@ If we check `C:\Program Files`, we can also see `Azure AD Sync` and `Azure AD Co
 
 ![](/assets/images/htb/monteverde/18.png)
 
-Googling Azure AD sync exploit brought me to https://blog.xpnsec.com/azuread-connect-for-redteam/.  
+Googling Azure AD sync exploit brought me to [xpn azure AD Red Team](https://blog.xpnsec.com/azuread-connect-for-redteam/).  
 
 XPN does a great job explaining how everything works and provides us with a script that we need to modify to get it working.  
 
@@ -267,7 +276,8 @@ This is a standard one-liner used for PowerShell scripts.
 - `downloadstring` fetches the content generally from a script.
 
 Put this altogether, and we can run scripts directly from memory instead of downloading and importing the module.  
-Why do this?  
+
+**Why do this?**
 If AV is turned on, it won't get popped rather quickly and keeps us from downloading anything onto the system, leaving tools behind, etc.
 
 Now, on our system, we will open a Python server.
