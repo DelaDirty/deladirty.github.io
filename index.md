@@ -37,7 +37,7 @@ feature_row:
     btn_class: "btn--primary"
 ---
 ### Featured Posts
-{% include feature_row %}
+
 
 {% for post in paginator.posts %}
 
