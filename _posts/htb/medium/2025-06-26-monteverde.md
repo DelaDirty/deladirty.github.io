@@ -263,7 +263,7 @@ If we check `C:\Program Files`, we can also see `Azure AD Sync` and `Azure AD Co
 
 ## AD Connect Exploit
 
-Googling Azure AD sync exploit brought me to [xpn azure AD Red Team](https://blog.xpnsec.com/azuread-connect-for-redteam/).  
+Googling Azure AD connect exploit brought me to [xpn azure AD Red Team](https://blog.xpnsec.com/azuread-connect-for-redteam/).  
 
 XPN does a great job explaining how everything works and provides us with a script that we need to modify to get it working.  
 
