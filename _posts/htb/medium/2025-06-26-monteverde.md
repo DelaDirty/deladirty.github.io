@@ -159,6 +159,8 @@ We found a user and their password. We are finally moving a bit forward, but bef
 ![](/assets/images/htb/monteverde/7.png)
 
 Now that we know the SABatchJobs password, I will create a new list called `validpass` and add every valid password to it, keeping things separated and organized.
+
+
 ---
 
 ## SMB With Credentials
