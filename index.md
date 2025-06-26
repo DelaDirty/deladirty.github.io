@@ -37,16 +37,7 @@ feature_row:
     btn_class: "btn--primary"
 ---
 ### Featured Posts
-
-
-{% for post in paginator.posts %}
-
-{% endfor %}
-
-{% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path }}" class="button">View More </a>
-{% endif %}
-
+{% include feature_row %}
 
 
 
