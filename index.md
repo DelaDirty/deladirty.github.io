@@ -42,6 +42,13 @@ feature_row:
     url: "https://deladirty.github.io/htb/Forest/"
     btn_label: "Read Post"
     btn_class: "btn--primary"
+  - image_path: /assets/images/htb/blue/blue.png
+    alt: "Blue"
+    title: "Blue"
+    excerpt: "Walkthrough of HTB’s Blue, covering SMB enumeration, null sessions, and EternalBlue (MS17-010) exploitation."
+    url: "https://deladirty.github.io/htb/Blue/"
+    btn_label: "Read Post"
+    btn_class: "btn--primary"
 ---
 ### Featured Posts
 {% include feature_row %}
