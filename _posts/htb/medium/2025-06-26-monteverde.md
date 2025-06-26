@@ -1,6 +1,6 @@
 ---
 title: "Monteverde"
-date: 2025-06-12
+date: 2025-06-26
 excerpt: A complete walkthrough of HTB’s Monteverde box covering AD enumeration, Azure abuse, and domain compromise.
 categories:
   - htb 

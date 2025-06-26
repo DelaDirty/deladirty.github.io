@@ -28,6 +28,13 @@ feature_row:
     url: "https://deladirty.github.io/htb/Administrator/"
     btn_label: "Read Post"
     btn_class: "btn--primary"
+  - image_path: /assets/images/htb/monteverde/mv.png
+    alt: "Monteverde"
+    title: "Monteverde"
+    excerpt: "A complete walkthrough of HTB’s Monteverde box covering AD enumeration, Azure abuse, and domain compromise."
+    url: "https://deladirty.github.io/htb/monteverde/"
+    btn_label: "Read Post"
+    btn_class: "btn--primary"
 ---
 ### Featured Posts
 {% include feature_row %}
