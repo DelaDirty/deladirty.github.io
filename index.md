@@ -7,6 +7,13 @@ header:
   overlay_color: "rgba(112, 171, 171, 0.32)"
   overlay_filter: 0.10
 feature_row:
+  - image_path: /assets/images/template.png
+    alt: "From Chaos to Clarity: Why Templates Are Essential"
+    title: "From Chaos to Clarity: Why Templates Are Essential"
+    excerpt: "From scattered notes to strategic operations and why templates are a game-changer in pentesting."
+    url: "https://deladirty.github.io/blog/templates/"
+    btn_label: "Read Post"
+    btn_class: "btn--primary"
   - image_path: /assets/images/shellcode.png
     alt: "Shellcode-Encryption For OSEP"
     title: "Shellcode-Encryption For OSEP"
@@ -56,7 +63,7 @@ feature_row:
 
 
 ### Recent Posts
-{% for post in site.posts limit:3 %}
+{% for post in site.posts limit:2 %}
 ### [{{ post.title }}]({{ post.url | relative_url }})
 
 <small>{{ post.date | date: "%-d %b %Y" }}</small>
