@@ -85,10 +85,12 @@ It should be easy to update mid-engagement by modifying or adding headers as nee
 
 It can be easily converted into a report, summary, or guide to help you write your report or summary.
 
-    Can be easily converted into a report, blog, or summary
+Can be easily converted into a report, blog, or summary
 
-    Fields naturally support post-engagement write-ups without duplicate effort.
+Fields naturally support post-engagement write-ups without duplicate effort.
+
 ---
+
 ## My Own Templates
 
 In this section, I will post two templates: one for Windows and one for Linux, which I have used for CTFs and exams and found to be effective.  
