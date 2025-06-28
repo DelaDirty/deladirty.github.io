@@ -12,7 +12,7 @@ layout: single
 excerpt: "From scattered notes to strategic operations and why templates are a game-changer in pentesting."
 author_profile: true
 header:
-  teaser: /assets/images/template.jpg
+  teaser: /assets/images/template.png
 toc: true
 ---
 
