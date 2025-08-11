@@ -7,6 +7,13 @@ header:
   overlay_color: "rgba(112, 171, 171, 0.32)"
   overlay_filter: 0.10
 feature_row:
+  - image_path: /assets/images/blog/kerberos/cerb.png
+    alt: "Kerberos Delegations: What is it?"
+    title: "Kerberos Delegations: What is it?"
+    excerpt: "This post explains what Kerberos Delegations are how each type works and why they're exploitable."
+    url: "https://deladirty.github.io/blog/Kerberos/"
+    btn_label: "Read Post"
+    btn_class: "btn--primary"
   - image_path: /assets/images/template.png
     alt: "From Chaos to Clarity: Why Templates Are Essential"
     title: "From Chaos to Clarity: Why Templates Are Essential"
